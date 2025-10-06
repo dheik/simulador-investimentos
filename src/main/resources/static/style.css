@@ -1,0 +1,168 @@
+/* Importa a fonte 'Poppins' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --cor-primaria: #0052cc;
+    --cor-sucesso: #1a8754;
+    --cor-perda: #d93025;
+    --cor-fundo: #f8f9fa;
+    --cor-container: #ffffff;
+    --cor-texto-principal: #212529;
+    --cor-texto-secundario: #6c757d;
+    --cor-borda: #ced4da;
+    --sombra-caixa: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--cor-container);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--sombra-caixa);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.disclaimer {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.15);
+}
+
+button {
+    width: 100%;
+    padding: 0.9rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0041a3;
+}
+
+/* --- ESTILOS NOVOS E MELHORADOS PARA O AUTOCOMPLETE --- */
+
+/* O wrapper que criamos no HTML. Ele será a referência de posição. */
+.autocomplete-wrapper {
+    position: relative;
+}
+
+.sugestoes-container {
+    position: absolute;
+    top: calc(100% + 4px); /* Posiciona 4px abaixo do campo */
+    left: 0;
+    width: 100%; /* Garante que a largura seja a mesma do input */
+    background-color: var(--cor-container);
+    border: 1px solid #e1e4e8;
+    border-radius: 8px; /* Bordas arredondadas em todos os cantos */
+    box-shadow: 0 8px 16px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    max-height: 220px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.sugestao-item {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f6f8fa;
+}
+.sugestao-item:last-child {
+    border-bottom: none;
+}
+
+.sugestao-item:hover {
+    background-color: #f6f8fa;
+}
+
+.hidden {
+    display: none;
+}
+/* --- FIM DOS ESTILOS DO AUTOCOMPLETE --- */
+
+
+#resultado {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.resultado-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.resultado-item:last-child {
+    border-bottom: none;
+}
+
+.resultado-item strong {
+    font-weight: 600;
+}
+
+.positivo {
+    color: var(--cor-sucesso);
+    font-weight: 600;
+}
+
+.negativo {
+    color: var(--cor-perda);
+    font-weight: 600;
+}

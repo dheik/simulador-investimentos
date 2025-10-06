@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Investimentos Realista</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulador Realista</h1>
+    <p class="disclaimer">
+        Esta simulação usa o rendimento médio dos <strong>últimos 3 meses</strong> como base de cálculo. Rendimento passado não é garantia de resultados futuros.
+    </p>
+
+    <form id="simulador-form">
+        <div class="form-group">
+            <label for="ticker">Código da Ação (Ticker)</label>
+            <div class="autocomplete-wrapper">
+                <input type="text" id="ticker" autocomplete="off" placeholder="Digite para buscar..." required>
+                <div id="sugestoes" class="sugestoes-container hidden"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor a Investir (R$)</label>
+            <input type="number" id="valor" step="0.01" placeholder="Ex: 1000" required>
+        </div>
+        <div class="form-group">
+            <label for="meses">Quantidade de Meses</label>
+            <input type="number" id="meses" placeholder="Ex: 12" required>
+        </div>
+        <button type="submit">Simular</button>
+    </form>
+
+    <div id="resultado"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
